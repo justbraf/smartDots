@@ -4,12 +4,7 @@ class Barriers{
   Barriers(int size){
     blocks = new Obstacle[size];
     for (int i=0; i<size; i++){
-      int xPos = (int)random(size);
-      if (xPos < 1){
-        xPos=1;
-      }
-      
-      //blocks[i] = new Obstacles();
+      blocks[i] = new Obstacle(random(100,width-100),random(200,height-200),random(100,width+100),10);
     }
   }
 }

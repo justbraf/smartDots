@@ -2,11 +2,11 @@ class Obstacle{
   
   int x, y, obsLen, obsWid;
   
-  Obstacle(int xVal, int yVal, int xLen, int yLen){
-    x = xVal;
-    y = yVal;
-    obsLen = xLen;
-    obsWid = yLen;
+  Obstacle(float xVal, float yVal, float xLen, float yLen){
+    x = (int)xVal;
+    y = (int)yVal;
+    obsLen = (int)xLen;
+    obsWid = (int)yLen;
   }
   
   void show(){
