@@ -99,7 +99,7 @@ class Population{
     bestDot = maxIndex;
     if (dots[bestDot].reachedGoal){
       minStep = dots[bestDot].brain.step;
-      println("steps: "+minStep);
+      //println("steps: "+minStep);
     }
   }
   
