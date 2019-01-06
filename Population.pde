@@ -23,7 +23,7 @@ class Population{
     for (int i=0; i<dots.length; i++){
       if (dots[i].brain.step > minStep){
         dots[i].dead = true;
-      } else if(blockThem.collisionCheck(dots[i])) {//--------------------------------------------------------------
+      } else if(blockThem.collisionCheck(dots[i])) {
         dots[i].dead = true;
       } else{        
         dots[i].update();
