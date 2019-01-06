@@ -23,7 +23,7 @@ class Population{
     for (int i=0; i<dots.length; i++){
       if (dots[i].brain.step > minStep){
         dots[i].dead = true;
-      } else if(calculateCollision(dots[i])) {//--------------------------------------------------------------
+      } else if(blockThem.collisionCheck(dots[i])) {//--------------------------------------------------------------
         dots[i].dead = true;
       } else{        
         dots[i].update();
@@ -100,28 +100,6 @@ class Population{
     if (dots[bestDot].reachedGoal){
       minStep = dots[bestDot].brain.step;
       //println("steps: "+minStep);
-    }
-  }
-  
-  float calcTriArea(PVector point, PVector triA, PVector triB){
-    float sideA = PVector.dist(point, triA);
-    float sideB = PVector.dist(triA, triB);
-    float sideC = PVector.dist(point, triB);
-    float halfPerim = (sideA + sideB + sideC)/2.0;
-    return sqrt(halfPerim*(halfPerim-sideA)*(halfPerim-sideB)*(halfPerim-sideC));
-  }
-  
-  boolean calculateCollision(Dot dotCrash){
-    //(100,300,600,10)
-    PVector rectA = new PVector (100,300);
-    PVector rectB = new PVector (100,310);
-    PVector rectC = new PVector (700,300);
-    PVector rectD = new PVector (700,310);
-    float rectArea = PVector.dist(rectA,rectB) * PVector.dist(rectB, rectC);
-    if ((int)rectArea > (int)(calcTriArea(dotCrash.pos, rectA, rectB) + calcTriArea(dotCrash.pos, rectC, rectB) + calcTriArea(dotCrash.pos, rectC, rectD) + calcTriArea(dotCrash.pos, rectA, rectD))){      
-      return true;
-    } else {
-      return false;
     }
   }
 }
