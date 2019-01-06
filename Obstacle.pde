@@ -1,8 +1,8 @@
-class Obstacles{
+class Obstacle{
   
   int x, y, obsLen, obsWid;
   
-  Obstacles(int xVal, int yVal, int xLen, int yLen){
+  Obstacle(int xVal, int yVal, int xLen, int yLen){
     x = xVal;
     y = yVal;
     obsLen = xLen;

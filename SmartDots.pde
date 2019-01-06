@@ -1,12 +1,12 @@
 Population Zany;
 Goal goal;
-Obstacles blockThem;
+Obstacle blockThem;
 
 void setup(){
  size(800,800);
  Zany = new Population(1000);
  goal = new Goal();
- blockThem = new Obstacles(100,300,600,10);
+ blockThem = new Obstacle(100,300,600,10);
 }
 
 void draw(){
